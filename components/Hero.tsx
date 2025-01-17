@@ -2,11 +2,11 @@
 
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
-import { ShoppingBag, FileText, Cake } from 'lucide-react'
+import { ShoppingBag, FileText, Candy } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section className="bg-gradient-to-br from-panda-pink-100 via-panda-cream to-white py-16 md:py-24 overflow-hidden relative">
+    <section className="bg-gradient-to-br from-panda-pink-100 via-panda-cream to-white py-16 md:py-24 overflow-hidden relative rounded">
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 ml-12 mb-12 md:mb-0">
@@ -48,8 +48,8 @@ export default function Hero() {
                 fill
                 className="rounded-3xl shadow-2xl object-cover"
               />
-              <div className="absolute -top-6 -left-6 bg-panda-pink-500 text-white p-4 rounded-full shadow-lg animate-bounce">
-                <Cake className="h-8 w-8" />
+              <div className="absolute -top-6 -left-6 bg-panda-pink-500 text-white p-4 rounded-full shadow-lg animate-bounce flex gap-2">
+                <Candy className="h-8 w-8" />
               </div>
             </div>
           </div>

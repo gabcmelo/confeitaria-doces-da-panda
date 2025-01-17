@@ -13,14 +13,13 @@ export default function Header() {
   const navItems = [
     { href: "instagram", label: "Instagram" },
     { href: "order", label: "Pedir / Encomendar" },
-    { href: "contact", label: "Contato" },
   ]
 
   const scrollToSection = (sectionId: string) => {
     setIsMenuOpen(false)
     const section = document.getElementById(sectionId)
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' })
+      section.scrollIntoView({ behavior: 'smooth',inline: "center",block: "nearest" })
     }
   }
 
