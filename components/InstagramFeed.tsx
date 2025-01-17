@@ -32,7 +32,7 @@ export default function InstagramFeed() {
   const scrollNext = () => emblaApi && emblaApi.scrollNext()
 
   return (
-    <section className="bg-panda-cream py-12">
+    <section className="bg-panda-cream py-12 rounded">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-light text-panda-pink-600 text-center flex items-center justify-center mb-8">
           <Instagram className="h-8 w-8 mr-2" />

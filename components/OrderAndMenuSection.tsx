@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function OrderAndMenuSection() {
   return (
-    <section className="bg-gradient-to-br from-panda-pink-50 to-panda-cream py-16 md:py-24 relative overflow-hidden" id="order">
+    <section className="bg-gradient-to-br from-panda-pink-50 to-panda-cream py-16 md:py-24 relative overflow-hidden rounded" id="order">
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold text-panda-pink-600 text-center mb-12">
           Peça Agora ou Encomende
