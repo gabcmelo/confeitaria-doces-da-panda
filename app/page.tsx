@@ -4,7 +4,6 @@ import Hero from '@/components/Hero'
 import InstagramFeed from '@/components/InstagramFeed'
 import OrderAndMenuSection from '@/components/OrderAndMenuSection'
 import Footer from '@/components/Footer'
-import { Separator } from "@/components/ui/separator"
 
 export default function Home() {
   return (
