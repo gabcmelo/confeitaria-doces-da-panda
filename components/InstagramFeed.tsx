@@ -32,9 +32,9 @@ export default function InstagramFeed() {
   const scrollNext = () => emblaApi && emblaApi.scrollNext()
 
   return (
-    <section className="bg-panda-cream py-12 rounded">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-light text-panda-pink-600 text-center flex items-center justify-center mb-8">
+    <section className="bg-panda-cream pt-10">
+      <div className="container mx-auto">
+        <h2 className="text-3xl font-coffecake font-light text-panda-pink-600 text-center flex items-center justify-center mb-8">
           <Instagram className="h-8 w-8 mr-2" />
           Nosso Instagram
         </h2>
@@ -74,7 +74,7 @@ export default function InstagramFeed() {
             <ChevronRight className="h-6 w-6 text-panda-pink-600" />
           </button>
         </div>
-        <div className="text-center mt-8">
+        <div className="text-center py-8">
           <a 
             href="https://www.instagram.com/doces.dapanda/" 
             target="_blank" 

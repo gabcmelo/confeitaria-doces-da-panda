@@ -1,14 +1,20 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-	content: [
-	  './pages/**/*.{js,ts,jsx,tsx,mdx}',
-	  './components/**/*.{js,ts,jsx,tsx,mdx}',
-	  './app/**/*.{js,ts,jsx,tsx,mdx}',
-	],
+import type { Config } from "tailwindcss";
+
+export default {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
 	theme: {
 	  extend: {
 		colors: {
-		  'panda-pink': {
+		'panda-primary': '#E92162',
+		'panda-secondary': '#6A3628',
+		'panda-bege': '#FFE3CF',
+		'panda-off-white': '#F9E3CE',
+		'panda-white': '#FFFFFF',
+		'panda-pink': {
 			50: '#fdf2f8',
 			100: '#fce7f3',
 			200: '#fbcfe8',
@@ -24,7 +30,8 @@ module.exports = {
 		  'panda-brown': '#8B4513',
 		},
 		fontFamily: {
-		  barlow: ['Barlow', 'sans-serif'],
+			alternates: ['--font-montserrat-alternates', 'Montserrat Alternates'],
+			coffecake: ['--font-coffecake', 'cursive'],
 		},
 		animation: {
 		  float: 'float 3s ease-in-out infinite',
@@ -59,6 +66,7 @@ module.exports = {
 	  },
 	},
 	plugins: [],
-  }
+  } satisfies Config;
+
   
   

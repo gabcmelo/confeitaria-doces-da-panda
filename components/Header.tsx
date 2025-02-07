@@ -1,94 +1,44 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+import { useRouter } from 'next/navigation';
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const router = useRouter();
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
-
-  const navItems = [
-    { href: "instagram", label: "Instagram" },
-    { href: "order", label: "Pedir / Encomendar" },
-  ]
-
-  const scrollToSection = (sectionId: string) => {
-    setIsMenuOpen(false)
-    const section = document.getElementById(sectionId)
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth',inline: "center",block: "nearest" })
-    }
+  const handleNavigateEncomenda = () => {
+    router.push('/cardapio-encomenda')
+  }
+  const handleNavigation = (href: string) => {
+    window.open(href, '_blank');
   }
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (isMenuOpen) {
-        setIsMenuOpen(false)
-      }
-    }
+  const navItems = [
+    { href: "https://www.instagram.com/doces.dapanda/", label: "Quem Somos" },
+    { href: "https://maps.app.goo.gl/cvW1b6agn1nFnW179", label: "Localização" },
+    { href: "https://pedido.anota.ai/loja/confeitaria-doces-da-panda?f=msa", label: "Cardapio de Delivery" },
+  ]
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [isMenuOpen])
 
   return (
-    <header className="bg-panda-cream py-4 shadow-md sticky top-0 z-50">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center">
-          <Link href="/" className="flex items-center">
-            <Image src="/logo-doces-da-panda.png" alt="Doces Da Panda Logo" width={50} height={50} className="mr-3 rounded-xl" />
-            <span className="text-panda-pink-600 text-2xl font-semibold">Doces Da Panda</span>
-          </Link>
-          
-          {/* Desktop Navigation */}
-          <nav className="hidden md:block">
-            <ul className="flex space-x-6">
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <button 
-                    onClick={() => scrollToSection(item.href)}
-                    className="text-panda-brown hover:text-panda-pink-500 transition duration-300"
-                  >
-                    {item.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </nav>
+    <div className="fixed top-0 z-30 w-full bg-[#ffe3cf] backdrop-blur-sm   flex justify-between items-center px-4 py-2">
+      <Link href="/" className="flex items-center">
+      <Image width={80} height={80} src="/panda_rosa_logo.png" alt="Logo da Confeitaria Doces da Panda" />
+      </Link>
+      <div className="justify-start items-center gap-[37px] flex">
+        <div className="justify-start items-start gap-1.5 flex">
+          {navItems.map((item, index) => (
+            <Button  key={index} variant="ghost" className="text-black hover:bg-rose-400 hover:text-white" onClick={() => handleNavigation(item.href)}>{item.label}</Button>
+          ))
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-panda-pink-600 hover:text-panda-pink-700 transition duration-300"
-            onClick={toggleMenu}
-            aria-expanded={isMenuOpen}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          }
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <nav className="md:hidden mt-4">
-            <ul className="flex flex-col space-y-2">
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <button 
-                    onClick={() => scrollToSection(item.href)}
-                    className="block w-full text-left py-2 px-4 text-panda-brown hover:bg-panda-pink-100 hover:text-panda-pink-500 rounded transition duration-300"
-                  >
-                    {item.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        )}
+        <Button className="bg-[#e92162] text-white hover:bg-[#A41443] text-base font-semibold rounded-[1rem]" size={"lg"}  onClick={handleNavigateEncomenda}>Encomendar Agora mesmo!</Button>
       </div>
-    </header>
+    </div>
+
   )
 }
 
