@@ -6,8 +6,8 @@ interface NotionEmbedProps {
 
 const NotionEmbed = ({ src, title = "Cardápio Digital", className = "" }: NotionEmbedProps) => {
   return (
-    <div className="w-full mx-auto">
-      <div className="relative h-svh w-full rounded-lg overflow-hidden shadow-lg">
+    <div className="w-[90svh] h-svh">
+      
         <iframe
           src={src}
           title={title}
@@ -15,9 +15,8 @@ const NotionEmbed = ({ src, title = "Cardápio Digital", className = "" }: Notio
           loading="lazy"
           allow="clipboard-write"
           sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
-        />
-      </div>
-    </div>
+          />
+          </div>
   )
 }
 

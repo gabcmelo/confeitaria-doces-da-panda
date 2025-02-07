@@ -3,9 +3,14 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
+import { useRouter } from 'next/navigation';
 
 export default function Header() {
+  const router = useRouter();
 
+  const handleNavigateEncomenda = () => {
+    router.push('/cardapio-encomenda')
+  }
   const handleNavigation = (href: string) => {
     window.open(href, '_blank');
   }
@@ -30,10 +35,7 @@ export default function Header() {
 
           }
         </div>
-        <Button className="bg-[#e92162] text-white hover:bg-[#A41443] text-base font-semibold rounded-[1rem]" size={"lg"}  onClick={() => {
-        window.open('https://api.whatsapp.com/send/?phone=5521967756257&text&type=phone_number&app_absent=0', '_blank');
-      }
-}>Encomendar Agora mesmo!</Button>
+        <Button className="bg-[#e92162] text-white hover:bg-[#A41443] text-base font-semibold rounded-[1rem]" size={"lg"}  onClick={handleNavigateEncomenda}>Encomendar Agora mesmo!</Button>
       </div>
     </div>
 
