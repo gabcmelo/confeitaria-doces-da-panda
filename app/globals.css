@@ -4,10 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   :root {
-    --panda_primary: hsl(341, 82%, 52%);
-    --panda_white: #FFFFFF;
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
@@ -61,7 +60,12 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+  
+body {
+  font-family: "Montserrat Alternates", serif;
 }
+}
+
 
 .montserrat-alternates-thin {
   font-family: "Montserrat Alternates", serif;
@@ -169,4 +173,11 @@
   font-family: "Montserrat Alternates", serif;
   font-weight: 900;
   font-style: italic;
+}
+
+
+@layer utilities {
+.text-balance {
+  text-wrap: balance;
+}
 }
