@@ -8,7 +8,7 @@ import Footer from '@/components/Footer'
 import FloatBottomButton from '@/components/FloatBottomButton'
 
 const coffecake = localFont({
-  src: './font/coffecake.woff2',
+  src: "./font/Coffecake.woff2",
   variable:  '--font-coffecake'
 })
 
